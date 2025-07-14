@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Tuning Anfrage Formular</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="number"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin-top: 20px;
+      background-color: #2d89ef;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b65c7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tuning Anfrage Formular</h1>
+
+  <form>
+    <fieldset>
+      <legend>1. Fahrzeugdaten</legend>
+      <label>Marke / Modell:</label><input type="text">
+      <label>Baujahr:</label><input type="text">
+      <label>Kraftstoffart:</label>
+      <select><option>Benzin</option><option>Diesel</option></select>
+      <label>Leistung (PS oder kW):</label><input type="text">
+      <label>Getriebe:</label>
+      <div class="checkbox-group">
+        <input type="checkbox"> Schaltgetriebe
+        <input type="checkbox"> Automatik
+        <input type="checkbox"> DSG
+      </div>
+      <label>Motorkennbuchstabe (MKB):</label><input type="text">
+      <label>Umbauten (z. B. Turbo, Auspuff, Ansaugung, etc.):</label><input type="text">
+      <label>Chiptuning oder Modifikation durchgeführt?</label>
+      <div class="checkbox-group">
+        <input type="checkbox"> Ja
+        <input type="checkbox"> Nein
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Gewünschte Funktionen</legend>
+      <div class="checkbox-group">
+        <input type="checkbox"> Vmax aufheben<br>
+        <input type="checkbox"> Pop & Bang – Klang:
+        <input type="checkbox"> leicht
+        <input type="checkbox"> mittel
+        <input type="checkbox"> extrem<br>
+        Aktivierung über:
+        <input type="checkbox"> AC-Taste
+        <input type="checkbox"> dauerhaft
+        <input type="checkbox"> andere Taste:
+        <input type="text"><br>
+        <input type="checkbox"> Hardcut bei <input type="text" style="width:80px;"> U/min<br>
+        <input type="checkbox"> Launch Control bei <input type="text" style="width:80px;"> U/min<br>
+        <input type="checkbox"> Schub-Anfettung<br>
+        <input type="checkbox"> AGR/DPF Deaktivierung<br>
+        <input type="checkbox"> SCR / NOx-System deaktivieren<br>
+        <input type="checkbox"> Fehlercode-Unterdrückung – Codes:
+        <textarea rows="2"></textarea><br>
+        <input type="checkbox"> Mehrere Fahrmodi<br>
+        Umschaltung über:
+        <input type="checkbox"> Tempomat
+        <input type="checkbox"> Kupplung
+        <input type="checkbox"> Gaspedal
+        <input type="checkbox"> andere:
+        <input type="text"><br>
+        <input type="checkbox"> Sonstiges:
+        <input type="text">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Dateiupload</legend>
+      <div class="checkbox-group">
+        <input type="checkbox"> Steuergerät ausgelesen?
+        <label>Tool (wenn bekannt):</label><input type="text">
+        <label>Datei Upload:</label><input type="file">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Sonstige Hinweise / Wünsche</legend>
+      <textarea rows="4" placeholder="z. B. Gasanlage verbaut, Probleme, Wunschklang, Rückgabewunsch..."></textarea>
+    </fieldset>
+
+    <button type="submit">Anfrage absenden</button>
+  </form>
+</body>
+</html>
