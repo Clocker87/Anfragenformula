@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -65,76 +64,75 @@
 <body>
   <h1>Tuning Anfrage Formular</h1>
 
-  <form>
+  <form action="https://formsubmit.co/stenner0815@hotmail.de" method="POST">
     <fieldset>
       <legend>1. Fahrzeugdaten</legend>
-      <label>Marke / Modell:</label><input type="text">
-      <label>Baujahr:</label><input type="text">
+      <label>Marke / Modell:</label><input type="text" name="Fahrzeug">
+      <label>Baujahr:</label><input type="text" name="Baujahr">
       <label>Kraftstoffart:</label>
-      <select><option>Benzin</option><option>Diesel</option></select>
-      <label>Leistung (PS oder kW):</label><input type="text">
+      <select name="Kraftstoff">
+        <option>Benzin</option><option>Diesel</option>
+      </select>
+      <label>Leistung (PS oder kW):</label><input type="text" name="Leistung">
       <label>Getriebe:</label>
       <div class="checkbox-group">
-        <input type="checkbox"> Schaltgetriebe
-        <input type="checkbox"> Automatik
-        <input type="checkbox"> DSG
+        <input type="checkbox" name="Getriebe" value="Schaltgetriebe"> Schaltgetriebe
+        <input type="checkbox" name="Getriebe" value="Automatik"> Automatik
+        <input type="checkbox" name="Getriebe" value="DSG"> DSG
       </div>
-      <label>Motorkennbuchstabe (MKB):</label><input type="text">
-      <label>Umbauten (z. B. Turbo, Auspuff, Ansaugung, etc.):</label><input type="text">
-      <label>Chiptuning oder Modifikation durchgeführt?</label>
+      <label>Motorkennbuchstabe (MKB):</label><input type="text" name="MKB">
+      <label>Umbauten:</label><input type="text" name="Umbauten">
+      <label>Chiptuning oder Modifikation?</label>
       <div class="checkbox-group">
-        <input type="checkbox"> Ja
-        <input type="checkbox"> Nein
+        <input type="checkbox" name="Tuning" value="Ja"> Ja
+        <input type="checkbox" name="Tuning" value="Nein"> Nein
       </div>
     </fieldset>
 
     <fieldset>
       <legend>2. Gewünschte Funktionen</legend>
       <div class="checkbox-group">
-        <input type="checkbox"> Vmax aufheben<br>
-        <input type="checkbox"> Pop & Bang – Klang:
-        <input type="checkbox"> leicht
-        <input type="checkbox"> mittel
-        <input type="checkbox"> extrem<br>
+        <input type="checkbox" name="Funktion[]" value="Vmax aufheben"> Vmax aufheben<br>
+        <input type="checkbox" name="Funktion[]" value="Pop & Bang"> Pop & Bang – Klang:
+        <input type="checkbox" name="Klang" value="leicht"> leicht
+        <input type="checkbox" name="Klang" value="mittel"> mittel
+        <input type="checkbox" name="Klang" value="extrem"> extrem<br>
         Aktivierung über:
-        <input type="checkbox"> AC-Taste
-        <input type="checkbox"> dauerhaft
-        <input type="checkbox"> andere Taste:
-        <input type="text"><br>
-        <input type="checkbox"> Hardcut bei <input type="text" style="width:80px;"> U/min<br>
-        <input type="checkbox"> Launch Control bei <input type="text" style="width:80px;"> U/min<br>
-        <input type="checkbox"> Schub-Anfettung<br>
-        <input type="checkbox"> AGR/DPF Deaktivierung<br>
-        <input type="checkbox"> SCR / NOx-System deaktivieren<br>
-        <input type="checkbox"> Fehlercode-Unterdrückung – Codes:
-        <textarea rows="2"></textarea><br>
-        <input type="checkbox"> Mehrere Fahrmodi<br>
+        <input type="checkbox" name="Aktivierung" value="AC-Taste"> AC-Taste
+        <input type="checkbox" name="Aktivierung" value="dauerhaft"> dauerhaft
+        <input type="checkbox" name="Aktivierung" value="andere"> andere Taste:
+        <input type="text" name="Taste"><br>
+        <input type="checkbox" name="Funktion[]" value="Hardcut"> Hardcut bei <input type="text" name="Hardcut_RPM" style="width:80px;"> U/min<br>
+        <input type="checkbox" name="Funktion[]" value="Launch Control"> Launch Control bei <input type="text" name="Launch_RPM" style="width:80px;"> U/min<br>
+        <input type="checkbox" name="Funktion[]" value="Schub-Anfettung"> Schub-Anfettung<br>
+        <input type="checkbox" name="Funktion[]" value="AGR/DPF"> AGR/DPF Deaktivierung<br>
+        <input type="checkbox" name="Funktion[]" value="SCR/NOx"> SCR / NOx-System deaktivieren<br>
+        <input type="checkbox" name="Funktion[]" value="DTC-Off"> Fehlercode-Unterdrückung – Codes:
+        <textarea rows="2" name="Fehlercodes"></textarea><br>
+        <input type="checkbox" name="Funktion[]" value="Fahrmodi"> Mehrere Fahrmodi<br>
         Umschaltung über:
-        <input type="checkbox"> Tempomat
-        <input type="checkbox"> Kupplung
-        <input type="checkbox"> Gaspedal
-        <input type="checkbox"> andere:
-        <input type="text"><br>
-        <input type="checkbox"> Sonstiges:
-        <input type="text">
+        <input type="checkbox" name="Umschaltung" value="Tempomat"> Tempomat
+        <input type="checkbox" name="Umschaltung" value="Kupplung"> Kupplung
+        <input type="checkbox" name="Umschaltung" value="Gaspedal"> Gaspedal
+        <input type="checkbox" name="Umschaltung" value="andere"> andere:
+        <input type="text" name="ModusSonstiges"><br>
+        <input type="checkbox" name="Funktion[]" value="Sonstiges"> Sonstiges:
+        <input type="text" name="Sonstiges">
       </div>
     </fieldset>
 
     <fieldset>
       <legend>3. Dateiupload</legend>
       <div class="checkbox-group">
-        <input type="checkbox"> Steuergerät ausgelesen?
-        <label>Tool (wenn bekannt):</label><input type="text">
-        <label>Datei Upload:</label><input type="file">
+        <input type="checkbox" name="DumpVorhanden" value="Ja"> Steuergerät ausgelesen?<br>
+        <label>Tool (wenn bekannt):</label><input type="text" name="Tool">
+        <label>Hinweis zu Datei bitte per E-Mail separat schicken.</label>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>4. Sonstige Hinweise / Wünsche</legend>
-      <textarea rows="4" placeholder="z. B. Gasanlage verbaut, Probleme, Wunschklang, Rückgabewunsch..."></textarea>
+      <textarea rows="4" name="Hinweise" placeholder="z. B. Gasanlage verbaut, Probleme, Wunschklang, Rückgabewunsch..."></textarea>
     </fieldset>
 
-    <button type="submit">Anfrage absenden</button>
-  </form>
-</body>
-</html>
+    <input
