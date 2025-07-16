@@ -128,11 +128,15 @@
         <label>Tool (wenn bekannt):</label><input type="text" name="Tool">
         <label>Hinweis zu Datei bitte per E-Mail separat schicken.</label>
       </div>
-    </fieldset>
-
     <fieldset>
       <legend>4. Sonstige Hinweise / Wünsche</legend>
       <textarea rows="4" name="Hinweise" placeholder="z. B. Gasanlage verbaut, Probleme, Wunschklang, Rückgabewunsch..."></textarea>
     </fieldset>
 
-    <input
+    <input type="hidden" name="_subject" value="Neue Tuning Anfrage">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Anfrage absenden</button>
+  </form>
+</body>
+</html>
