@@ -33,7 +33,7 @@
       margin-top: 12px;
       font-weight: bold;
     }
-    input[type="text"], input[type="number"], textarea, select {
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
       width: 100%;
       padding: 8px;
       margin-top: 4px;
@@ -59,12 +59,39 @@
     button:hover {
       background-color: #1b65c7;
     }
+    .required:after {
+      content: " *";
+      color: red;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <h1>Tuning Anfrage Formular</h1>
 
   <form action="https://formsubmit.co/stenner0815@hotmail.de" method="POST">
+    
+    <fieldset>
+      <legend>DSGVO Zustimmung & Kontaktdaten</legend>
+      <label class="required">Vorname & Nachname:</label>
+      <input type="text" name="Name" required>
+      <label class="required">E-Mail Adresse:</label>
+      <input type="email" name="Email" required>
+      <label class="required">Telefonnummer:</label>
+      <input type="tel" name="Telefon" required>
+      <label class="required"><input type="checkbox" name="DSGVO" value="Zugestimmt" required> Ich stimme der Verarbeitung meiner Daten gemäß DSGVO zu.</label>
+    </fieldset>
+
     <fieldset>
       <legend>1. Fahrzeugdaten</legend>
       <label>Marke / Modell:</label><input type="text" name="Fahrzeug">
@@ -87,6 +114,11 @@
         <input type="checkbox" name="Tuning" value="Ja"> Ja
         <input type="checkbox" name="Tuning" value="Nein"> Nein
       </div>
+      <label>Soll das Fahrzeug auf Serienstand gebracht werden?</label>
+      <select name="Serienstand">
+        <option>Nein</option>
+        <option>Ja</option>
+      </select>
     </fieldset>
 
     <fieldset>
@@ -128,6 +160,8 @@
         <label>Tool (wenn bekannt):</label><input type="text" name="Tool">
         <label>Hinweis zu Datei bitte per E-Mail separat schicken.</label>
       </div>
+    </fieldset>
+
     <fieldset>
       <legend>4. Sonstige Hinweise / Wünsche</legend>
       <textarea rows="4" name="Hinweise" placeholder="z. B. Gasanlage verbaut, Probleme, Wunschklang, Rückgabewunsch..."></textarea>
@@ -137,6 +171,11 @@
     <input type="hidden" name="_captcha" value="false">
 
     <button type="submit">Anfrage absenden</button>
+
+    <p style="text-align:center; margin-top:20px;">
+      <a href="https://wa.me/4917642079483?text=Ich%20habe%20eine%20Tuning-Anfrage.%20Bitte%20melden%20Sie%20sich%20bei%20mir."
+         class="whatsapp-button">📱 Per WhatsApp senden</a>
+    </p>
   </form>
 </body>
 </html>
